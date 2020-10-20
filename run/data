@@ -1,0 +1,78 @@
+# ====================
+# | Model parameters |
+# ====================
+#
+# Continuous equation parameters
+ &PARM01
+ tRef=0.0,
+ sRef=36.05,
+ viscA4=0.0,
+ viscAh=1.0E-2,
+ viscAz=1.0E-4,
+ no_slip_sides=.TRUE.,
+ no_slip_bottom=.TRUE.,
+ diffK4T=0.0,
+ diffKhT=1.0E-2,
+ diffKzT=1.0E-4,
+ diffK4S=0.0,
+ diffKhS=0.0,
+ diffKzS=0.0,
+ f0=1.0E-4,
+ beta=0.E-11,
+ eosType='LINEAR',
+ tAlpha=2E-4,
+ sBeta =0.0,
+ rhoConst=1026.5,
+ rhoNil=1026.5,
+ implicitDiffusion=.FALSE.,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ nonHydrostatic=.TRUE.,
+ staggerTimeStep=.TRUE.,
+ readBinaryPrec=64,
+ tempAdvScheme=30,
+ saltAdvScheme=30,
+ ! tidal/cori params
+ tidalForcingU=1.0E-6,
+ tidalForcingV=0.0,
+ tidalFreq=1.3889E-4,
+ meanForcingU=0.0,
+ meanForcingV=0.0,
+ gravity=9.81,
+ hFacMin=0.1,
+ &
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=300,
+ cg2dTargetResidual=1.E-13,
+ cg3dMaxIters=20,
+ cg3dTargetResidual=1.E-8,
+ &
+
+# Time stepping parameters
+ &PARM03
+ nIter0=0,
+ nTimeSteps=20000,
+ deltaT=15.0,
+ pChkptFreq=0.0,
+ chkptFreq=0.0,
+ dumpFreq=3600.0,
+ monitorSelect=2,
+ monitorFreq=3600.,
+ &
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+ dYspacing=97.6563,
+ dXspacing=97.6563,
+ delZ=3000*1.5,
+ &
+
+# Input datasets
+ &PARM05
+ bathyFile='topo_h100.field',
+ hydrogThetaFile='Tinit_N2_3e6.field',
+ uVelInitFile='uinit_super.field', 
+ &

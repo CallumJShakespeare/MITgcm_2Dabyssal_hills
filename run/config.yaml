@@ -1,0 +1,26 @@
+queue: normal
+# qsub_flags: -lother=hyperthread
+project: nm03
+walltime: 5:00:00
+ncpus: 16
+mem: 32GB
+jobname: 100m_s
+collate_walltime: 10:00:00
+collate_mem: 2GB
+# postscript: /home/157/ixr157/scripts/jobs/run_extract
+restart_history: 10
+model: mitgcm
+shortpath: /scratch/v45/cjs157/gadi_short/
+exe: mitgcmuv_topo2d_1024x_3000z_16cpu
+qsub_flags: -W umask=027 
+
+# exe: mitgcmuv_880x520_8constit_128cpu
+input: /g/data/nm03/cjs157/mitgcm/topo2d/input/
+
+runlog: true
+
+platform:
+ nodesize: 48
+
+ #manifest:
+ #fullhash: binhash
